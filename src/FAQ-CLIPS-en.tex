@@ -334,11 +334,11 @@ Por ejemplo:
         (slot numero_plazas (type INTEGER) (default 100))
 )\end{verbatim}
 
-\subsection{¿Puedo tener un vector como slot?}
+\subsection{Can I use a vector as a slot?}
 
-Si, debe declararse como multislot.
+Yes, you must declarar it as a multislot.
 
-\subsection{¿Puedo asignar propiedades a los slots?}
+\subsection{Can I assign properties to the slots?}
 
 Sí, las más importantes son:
 \begin{description}
@@ -364,27 +364,24 @@ no se podrá crear la instancia a no ser que se especifique el valor de ese slot
 )
 \end{verbatim}
 
-\subsection{¿Qué debo utilizar, hechos ordenados o no ordenados?}
+\subsection{When we are supposed to use sorted and when not sorted facts?}
 
-Como se puede intuir si tenemos un conjunto de hechos los cuales conceptualmente pertenecen al mismo ámbito, será una solución más elegante agruparlos a través de un deftemplate. En caso que tengamos que algún hecho aislado, será mas sencillo declararlo como un hecho ordenado.
-
-
+As you can guess, when we have a set of facts which conceptually belong to the same area,it will be an elegant solution to group them through a deftemplate. In the case that we get something done that is isolated, it's better to do it as sorted.
 
 
-\subsection{Fets o Objectes?}
 
+\subsection{Fact or Objects?}
+Displaying the definition of deftemplate can lead to confusion in deciding whether to use facts or use objects.
 
-Veient la definició de deftemplate podem confondre'ns a l'hora de decidir si fer servir fets o fer servir objectes.
+Leaving aside other differences already commented (support classes
+class hierarchy, inheritance, etc. ..), the objects are used to
+represent the knowledge (through a set of instances).
 
-Deixant de banda altres diferències ja comentades (les classes suporten
-jerarquia de classes, herència, etc..), els objectes es fan servir per
-representar el coneixement (mitjançant un conjunt d'instàncies).
+So generally, we use classes and objects to represent knowledge, while we use the facts to take control over the execution of the problem.
 
-Així que, generalment, farem servir classes i objectes per representar coneixement, mentre que farem servir els fets per portar control sobre l'execució del problema.
+For example, we could define a deftemplate to store a result or to monitor the state of execution.
 
-Per exemple, podríem definir un deftemplate per emmagatzemar un resultat o per poder controlar l'estat de l'execució.
-
-A la pràctica de Mikeo (penjada a la web de l'assignatura) teníem un deftemplate \texttt{habitacion-actual}
+In practice, Mike (hanging on the website of the course) had a deftemplate \texttt{habitacion-actual}
 
 \begin{verbatim}
 (deftemplate habitacion-actual
